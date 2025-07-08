@@ -1,18 +1,70 @@
-# Getting Started with Create React App
+# Ethiopian Project Management System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A comprehensive project management system built with React, Node.js, and MongoDB for managing Ethiopian development projects.
+
+## Features
+
+- Project creation and management
+- Analytics dashboard with charts and statistics
+- Regional and sector-based project tracking
+- Gender distribution analysis
+- Status monitoring and reporting
+
+## Tech Stack
+
+- **Frontend**: React, TypeScript, Tailwind CSS, Recharts
+- **Backend**: Node.js, Express.js
+- **Database**: MongoDB (Local or Atlas)
+- **Build Tool**: Vite
+
+## Database Setup
+
+### MongoDB Local (Default)
+The project is configured to use MongoDB local by default. Make sure you have MongoDB installed and running locally.
+
+### MongoDB Atlas Setup
+To use MongoDB Atlas instead of local MongoDB:
+
+1. **Create a MongoDB Atlas Account**
+   - Go to [MongoDB Atlas](https://www.mongodb.com/atlas)
+   - Sign up for a free account
+   - Create a new cluster
+
+2. **Get Your Connection String**
+   - In your Atlas dashboard, click "Connect"
+   - Choose "Connect your application"
+   - Copy the connection string
+
+3. **Configure Environment Variables**
+   - Copy `env.template` to `.env`
+   - Replace the placeholder with your actual MongoDB Atlas connection string:
+   ```
+   MONGODB_URI=mongodb+srv://<username>:<password>@<cluster>.mongodb.net/<database>?retryWrites=true&w=majority
+   ```
+
+4. **Network Access**
+   - In Atlas, go to Network Access
+   - Add your IP address or use `0.0.0.0/0` for all IPs (not recommended for production)
+
+5. **Database User**
+   - Create a database user with read/write permissions
+   - Use the username and password in your connection string
 
 ## Available Scripts
 
-In the project directory, you can run:
+### `npm run dev`
 
-### `npm start`
+Runs both the frontend and backend in development mode.\
+Frontend: [http://localhost:5173](http://localhost:5173)\
+Backend: [http://localhost:3001](http://localhost:3001)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### `npm run server`
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Runs only the backend server on port 3001.
+
+### `npm run client`
+
+Runs only the frontend development server on port 5173.
 
 ### `npm test`
 

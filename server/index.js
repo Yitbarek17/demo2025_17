@@ -2,11 +2,15 @@ import express from 'express';
 import cors from 'cors';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import dotenv from 'dotenv';
 import connectDB from './config/database.js';
 import Project from './models/Project.js';
 import { sampleProjects } from './data/sampleData.js';
 import projectRoutes from './routes/projects.js';
 import metadataRoutes from './routes/metadata.js';
+
+// Load environment variables
+dotenv.config();
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
